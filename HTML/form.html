@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <link rel="stylesheet" href="../CSS/normalize.css">
+        <link rel="stylesheet" href="../CSS/style.css">
+        <link rel="stylesheet" href="../CSS/form.css">
+        <script defer src="../JS/scripts.js"></script>
+    </head>
+    <body>
+        <header>
+            
+        </header>
+        
+        <main>
+            <div class="name_section">
+                <h1>ToDo List</h1>
+            </div>
+
+            
+            <div class="content_section" id="form">
+                <form  id="form_text" onsubmit="event.preventDefault()">
+                    <input id='input' type='text' onclick="show_()" autocomplete="off" placeholder="Whats need to be done?" />
+                    <button class="text_button" onclick="pushIt()">Push</button>
+                    <div class="radio">
+                        <div class="radio_button">
+                            <input type="radio" name="filter" onclick="changeFilter()" value=0>all
+                        </div>
+                        <div class="radio_button">
+                            <input type="radio" name="filter" onclick="changeFilter()" value=1>only not completed
+                        </div>
+                        <div class="radio_button">
+                            <input type="radio" name="filter" onclick="changeFilter()" value=2>only completed
+                        </div>
+                    </div>
+                    <div class="doings" id="doings"></div>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>
