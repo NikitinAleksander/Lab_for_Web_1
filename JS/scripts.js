@@ -75,15 +75,6 @@ async function getDoings(){
   const data = await response.json();
   el=document.getElementById("doings");
   var infoJson="";
- /* for (let i = 0; i < data.length; i++) {
-    if(data[i].userId==1){
-      if(data[i].completed){
-        infoJson+='<div class="drops"><p><input class="button" type="button" onclick="popItById('+data[i].id+')" id="'+data[i].id + '"/>' + data[i].id+':'+data[i].title +'</p></div>';
-      }else{
-        infoJson+='<div class="drops"><s class="drops"><input class="button" type="button" onclick="popItById('+data[i].id+')" id="'+data[i].id + '"/>' + data[i].id+':'+data[i].title +'</s></div>';
-      }
-    }
-  }*/
   for (let i = 0; i < data.length; i++) {
     if(data[i].userId==1){
       if(data[i].completed){
@@ -93,26 +84,11 @@ async function getDoings(){
       }
     }
   }
-  //el.innerHTML+=infoJson;
 }
 
-//showList();
-function fo(){
-  for (let i = 0; i < not_completed.Array.length; i++) {
-    console.log(not_completed.Array[i].id);    
-  }
-  //console.log()
-}
-//fo();
 function outputIt() {
     var restoredDoings = JSON.parse(localStorage.getItem('doings'));
     var outputs = "";
-    /*for(var i = 0; i < restoredDoings.Array.length; i++)
-    {
-      outputs += '<p class="drops"><input class="button" type="button" onclick="popItById('+restoredDoings.Array[i].id+')" id="'+restoredDoings.Array[i].id + '"/>' + restoredDoings.Array[i].id+':'+restoredDoings.Array[i].name +'</p>';
-    }
-    outputs+=infoJson;
-    document.getElementById("doings").innerHTML= outputs;*/
     for(var i = 0; i < restoredDoings.Array.length; i++)
     {
       if (restoredDoings.Array[i].id>maxId){
